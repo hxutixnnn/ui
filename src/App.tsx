@@ -470,7 +470,7 @@ function ComponentPage({ entry }: { entry: Entry }) {
       </section>
       <section className="doc-section">
         <h2>Usage</h2>
-        <Code>{`import { ${
+        <Code>{`"use client"\n\nimport { ${
           componentExports[entry.name] ??
           entry.title
             .split(" ")

@@ -52,12 +52,11 @@ export const entries: Entry[] = [
   },
   {
     name: "simple-dialog",
-    imports:
-      'import { Button } from "@/components/ui/button"\nimport { FormField } from "@/components/tien/form-field"',
+    imports: 'import { Button } from "@/components/ui/button"',
     title: "Simple dialog",
     category: "Overlays",
     description: "One component for the trigger, title, content, and footer.",
-    code: '<SimpleDialog\n  trigger={<Button>Edit profile</Button>}\n  title="Edit profile"\n  description="Make yourself at home."\n>\n  <FormField label="Name" defaultValue="Tien Nguyen" />\n</SimpleDialog>',
+    code: '<SimpleDialog\n  trigger={<Button>Edit profile</Button>}\n  title="Edit profile"\n  description="Make yourself at home."\n>\n  <p>Make changes to your profile here.</p>\n</SimpleDialog>',
     props: [
       ["trigger", "ReactElement", "Button that opens the dialog."],
       [
@@ -105,11 +104,12 @@ export const entries: Entry[] = [
   },
   {
     name: "simple-tooltip",
-    imports: 'import { Button } from "@/components/ui/button"',
+    imports:
+      'import { Button } from "@/components/ui/button"\nimport { TooltipProvider } from "@/components/ui/tooltip"',
     title: "Simple tooltip",
     category: "Overlays",
     description: "A helpful label, right where you need it.",
-    code: '<SimpleTooltip content="Project settings">\n  <Button variant="outline">Settings</Button>\n</SimpleTooltip>',
+    code: '<TooltipProvider>\n  <SimpleTooltip content="Project settings">\n    <Button variant="outline">Settings</Button>\n  </SimpleTooltip>\n</TooltipProvider>',
     props: [
       ["content", "ReactNode", "The tooltip text."],
       ["children", "ReactElement", "The focusable trigger."],

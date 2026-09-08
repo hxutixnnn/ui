@@ -939,3 +939,7 @@ td code {
     visibility: visible;
   }
 }
+
+.highlight-word {
+  isolation: isolate;
+}
