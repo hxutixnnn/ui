@@ -943,3 +943,5 @@ td code {
 .highlight-word {
   isolation: isolate;
 }
+
+img.avatar { object-fit: cover; }

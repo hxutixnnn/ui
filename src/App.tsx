@@ -728,7 +728,7 @@ function App() {
               target="_blank"
               rel="noreferrer"
             >
-              <span className="avatar">tn</span>
+              <img className="avatar" src="/avatar.jpg" alt="" width={32} height={32} />
               <span>
                 Nguyen Huu Tien<small>@hxutixnnn</small>
               </span>
