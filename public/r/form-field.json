@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field",
+  "title": "Form Field",
+  "description": "Simplified Tien UI component: form-field.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/input.json",
+    "https://ui.nguyenhuutien.com/r/label.json",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/form-field.tsx",
+      "content": "\"use client\"\n\nimport { useId, type ComponentProps, type ReactNode } from \"react\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface FormFieldProps extends ComponentProps<typeof Input> {\n  label: ReactNode\n  description?: ReactNode\n  error?: ReactNode\n  containerClassName?: string\n}\n\nexport function FormField({\n  label,\n  description,\n  error,\n  id,\n  containerClassName,\n  ...props\n}: FormFieldProps) {\n  const generatedId = useId()\n  const inputId = id ?? generatedId\n  const hasDescription = description != null && description !== false\n  const hasError = error != null && error !== false && error !== \"\"\n  const describedBy =\n    [\n      props[\"aria-describedby\"],\n      hasDescription && `${inputId}-description`,\n      hasError && `${inputId}-error`,\n    ]\n      .filter(Boolean)\n      .join(\" \") || undefined\n\n  return (\n    <div\n      data-slot=\"form-field\"\n      className={cn(\"grid gap-2\", containerClassName)}\n    >\n      <Label htmlFor={inputId}>\n        {label}\n        {props.required && (\n          <span aria-hidden=\"true\" className=\"text-destructive\">\n            *\n          </span>\n        )}\n      </Label>\n      <Input\n        {...props}\n        id={inputId}\n        aria-describedby={describedBy}\n        aria-invalid={hasError || props[\"aria-invalid\"]}\n      />\n      {hasDescription && (\n        <p\n          id={`${inputId}-description`}\n          className=\"text-sm text-muted-foreground\"\n        >\n          {description}\n        </p>\n      )}\n      {hasError && (\n        <p\n          id={`${inputId}-error`}\n          role=\"alert\"\n          className=\"text-sm text-destructive\"\n        >\n          {error}\n        </p>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/form-field.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

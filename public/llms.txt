@@ -1,0 +1,43 @@
+# Tien UI
+
+Personal component library by Nguyen Huu Tien. React, TypeScript, Tailwind CSS v4, shadcn/ui, and Base UI. Luma style, neutral base, yellow theme and charts, Geist font, Hugeicons. Exact shadcn preset: b6GfB1yV8.
+
+## Start a project
+
+npx shadcn@latest init hxutixnnn/ui/index
+
+Choose your preferred supported React framework. The index installs the exact theme and component defaults. Alternatively initialize using --preset b6GfB1yV8 --base base.
+
+## Install components
+
+npx shadcn@latest add hxutixnnn/ui/action-button
+npx shadcn@latest add hxutixnnn/ui/form-field
+
+Hosted equivalent: npx shadcn@latest add https://ui.nguyenhuutien.com/r/action-button.json
+
+## Simplified components
+
+Prefer these when they fit. Each installs source to your components/tien directory plus its required foundations. Import from @/components/tien/{name}.
+
+- action-button: ActionButton. Standard Button props plus loading, leadingIcon, trailingIcon. Loading disables the button and sets aria-busy.
+- form-field: FormField. Standard Input props plus label, description, error, containerClassName. Associates label and error with the input.
+- labeled-switch: LabeledSwitch. Standard Switch props plus label, description. Supports checked/onCheckedChange or defaultChecked.
+- simple-dialog: SimpleDialog. trigger ReactElement, title, description, children, footer; optional open/onOpenChange. Built on Base UI for focus management and Escape dismissal.
+- simple-select: SimpleSelect. label, options array of {label,value,disabled?}, placeholder. Supports value/onValueChange or defaultValue.
+- simple-tooltip: SimpleTooltip. content and a focusable ReactElement child. Wrap the app in TooltipProvider from @/components/ui/tooltip.
+- empty-state: EmptyState. title, description, icon, action.
+- page-header: PageHeader. title, description, eyebrow, actions.
+
+## Foundations
+
+The registry includes button, input, textarea, label, switch, checkbox, badge, card, dialog, select, tooltip, accordion, separator, tabs, dropdown-menu, skeleton. Import from @/components/ui/{name}. Use Base UI APIs, including render instead of Radix asChild. These are the exact Luma preset sources.
+
+## Sources
+
+- Catalog: https://ui.nguyenhuutien.com/r/registry.json
+- Item source and schema: https://ui.nguyenhuutien.com/r/{name}.json
+- Documentation: https://ui.nguyenhuutien.com/guide
+- Component examples: https://ui.nguyenhuutien.com/components/{name}
+- GitHub: https://github.com/hxutixnnn/ui
+
+Inspect the item's TypeScript before using props. Installed source belongs to the project; customize it directly. No Tien UI runtime package is needed.

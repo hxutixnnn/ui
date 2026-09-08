@@ -1,0 +1,562 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "tien-ui",
+  "homepage": "https://ui.nguyenhuutien.com",
+  "items": [
+    {
+      "extends": "none",
+      "name": "index",
+      "dependencies": [
+        "shadcn@latest",
+        "class-variance-authority",
+        "cn",
+        "tw-animate-css",
+        "@base-ui/react",
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "font-geist"
+      ],
+      "cssVars": {
+        "theme": {
+          "--font-heading": "var(--font-sans)"
+        },
+        "light": {
+          "background": "oklch(1 0 0)",
+          "foreground": "oklch(0.145 0 0)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.145 0 0)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.145 0 0)",
+          "primary": "oklch(0.852 0.199 91.936)",
+          "primary-foreground": "oklch(0.421 0.095 57.708)",
+          "secondary": "oklch(0.967 0.001 286.375)",
+          "secondary-foreground": "oklch(0.21 0.006 285.885)",
+          "muted": "oklch(0.97 0 0)",
+          "muted-foreground": "oklch(0.556 0 0)",
+          "accent": "oklch(0.97 0 0)",
+          "accent-foreground": "oklch(0.205 0 0)",
+          "destructive": "oklch(0.577 0.245 27.325)",
+          "border": "oklch(0.922 0 0)",
+          "input": "oklch(0.922 0 0)",
+          "ring": "oklch(0.708 0 0)",
+          "chart-1": "oklch(0.905 0.182 98.111)",
+          "chart-2": "oklch(0.795 0.184 86.047)",
+          "chart-3": "oklch(0.681 0.162 75.834)",
+          "chart-4": "oklch(0.554 0.135 66.442)",
+          "chart-5": "oklch(0.476 0.114 61.907)",
+          "radius": "0.625rem",
+          "sidebar": "oklch(0.985 0 0)",
+          "sidebar-foreground": "oklch(0.145 0 0)",
+          "sidebar-primary": "oklch(0.681 0.162 75.834)",
+          "sidebar-primary-foreground": "oklch(0.987 0.026 102.212)",
+          "sidebar-accent": "oklch(0.97 0 0)",
+          "sidebar-accent-foreground": "oklch(0.205 0 0)",
+          "sidebar-border": "oklch(0.922 0 0)",
+          "sidebar-ring": "oklch(0.708 0 0)"
+        },
+        "dark": {
+          "background": "oklch(0.145 0 0)",
+          "foreground": "oklch(0.985 0 0)",
+          "card": "oklch(0.205 0 0)",
+          "card-foreground": "oklch(0.985 0 0)",
+          "popover": "oklch(0.205 0 0)",
+          "popover-foreground": "oklch(0.985 0 0)",
+          "primary": "oklch(0.795 0.184 86.047)",
+          "primary-foreground": "oklch(0.421 0.095 57.708)",
+          "secondary": "oklch(0.274 0.006 286.033)",
+          "secondary-foreground": "oklch(0.985 0 0)",
+          "muted": "oklch(0.269 0 0)",
+          "muted-foreground": "oklch(0.708 0 0)",
+          "accent": "oklch(0.269 0 0)",
+          "accent-foreground": "oklch(0.985 0 0)",
+          "destructive": "oklch(0.704 0.191 22.216)",
+          "border": "oklch(1 0 0 / 10%)",
+          "input": "oklch(1 0 0 / 15%)",
+          "ring": "oklch(0.556 0 0)",
+          "chart-1": "oklch(0.905 0.182 98.111)",
+          "chart-2": "oklch(0.795 0.184 86.047)",
+          "chart-3": "oklch(0.681 0.162 75.834)",
+          "chart-4": "oklch(0.554 0.135 66.442)",
+          "chart-5": "oklch(0.476 0.114 61.907)",
+          "sidebar": "oklch(0.205 0 0)",
+          "sidebar-foreground": "oklch(0.985 0 0)",
+          "sidebar-primary": "oklch(0.795 0.184 86.047)",
+          "sidebar-primary-foreground": "oklch(0.987 0.026 102.212)",
+          "sidebar-accent": "oklch(0.269 0 0)",
+          "sidebar-accent-foreground": "oklch(0.985 0 0)",
+          "sidebar-border": "oklch(1 0 0 / 10%)",
+          "sidebar-ring": "oklch(0.556 0 0)"
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
+        "@layer base": {
+          "*": {
+            "@apply border-border outline-ring/50": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground": {}
+          }
+        }
+      },
+      "type": "registry:base",
+      "config": {
+        "style": "base-luma",
+        "tailwind": {
+          "baseColor": "neutral"
+        },
+        "iconLibrary": "hugeicons",
+        "rtl": false,
+        "menuColor": "default-translucent",
+        "menuAccent": "subtle"
+      },
+      "title": "Tien UI defaults",
+      "description": "Luma, yellow, Geist, Hugeicons, and Base UI. Preset b6GfB1yV8."
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Luma preset foundation: accordion.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6",
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.2"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Luma preset foundation: badge.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Luma preset foundation: button.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Luma preset foundation: card.",
+      "dependencies": [
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Luma preset foundation: checkbox.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6",
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.2"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Luma preset foundation: dialog.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6",
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.2"
+      ],
+      "registryDependencies": [
+        "hxutixnnn/ui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Luma preset foundation: dropdown-menu.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6",
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.2"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Luma preset foundation: input.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Luma preset foundation: label.",
+      "dependencies": [
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Luma preset foundation: select.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6",
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.2"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Luma preset foundation: separator.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Luma preset foundation: skeleton.",
+      "dependencies": [
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Luma preset foundation: switch.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Luma preset foundation: tabs.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Luma preset foundation: textarea.",
+      "dependencies": [
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Luma preset foundation: tooltip.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.2.6"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "action-button",
+      "type": "registry:component",
+      "title": "Action Button",
+      "description": "Simplified Tien UI component: action-button.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/action-button.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/action-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "Empty State",
+      "description": "Simplified Tien UI component: empty-state.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/empty-state.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-field",
+      "type": "registry:component",
+      "title": "Form Field",
+      "description": "Simplified Tien UI component: form-field.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/input",
+        "hxutixnnn/ui/label",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/form-field.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/form-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "labeled-switch",
+      "type": "registry:component",
+      "title": "Labeled Switch",
+      "description": "Simplified Tien UI component: labeled-switch.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/switch",
+        "hxutixnnn/ui/label",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/labeled-switch.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/labeled-switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "Page Header",
+      "description": "Simplified Tien UI component: page-header.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/page-header.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "simple-dialog",
+      "type": "registry:component",
+      "title": "Simple Dialog",
+      "description": "Simplified Tien UI component: simple-dialog.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/dialog"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/simple-dialog.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/simple-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "simple-select",
+      "type": "registry:component",
+      "title": "Simple Select",
+      "description": "Simplified Tien UI component: simple-select.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/label",
+        "hxutixnnn/ui/select",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/simple-select.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/simple-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "simple-tooltip",
+      "type": "registry:component",
+      "title": "Simple Tooltip",
+      "description": "Simplified Tien UI component: simple-tooltip.",
+      "dependencies": [],
+      "registryDependencies": [
+        "hxutixnnn/ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/tien/simple-tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/tien/simple-tooltip.tsx"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simple-select",
+  "title": "Simple Select",
+  "description": "Simplified Tien UI component: simple-select.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/label.json",
+    "https://ui.nguyenhuutien.com/r/select.json",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/simple-select.tsx",
+      "content": "\"use client\"\n\nimport { useId, type ReactNode } from \"react\"\nimport { Label } from \"@/components/ui/label\"\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface SimpleSelectOption {\n  label: string\n  value: string\n  disabled?: boolean\n}\n\nexport interface SimpleSelectProps {\n  options: SimpleSelectOption[]\n  label: ReactNode\n  placeholder?: string\n  value?: string | null\n  defaultValue?: string | null\n  onValueChange?: (value: string | null) => void\n  id?: string\n  name?: string\n  disabled?: boolean\n  required?: boolean\n  className?: string\n}\n\nexport function SimpleSelect({\n  options,\n  label,\n  placeholder = \"Select an option\",\n  value,\n  defaultValue,\n  onValueChange,\n  id,\n  name,\n  disabled,\n  required,\n  className,\n}: SimpleSelectProps) {\n  const generatedId = useId()\n  const selectId = id ?? generatedId\n\n  return (\n    <div data-slot=\"simple-select\" className=\"grid gap-2\">\n      <Label id={`${selectId}-label`} htmlFor={selectId}>\n        {label}\n        {required && (\n          <span aria-hidden=\"true\" className=\"text-destructive\">\n            *\n          </span>\n        )}\n      </Label>\n      <Select\n        items={options}\n        value={value}\n        defaultValue={defaultValue}\n        onValueChange={onValueChange}\n        name={name}\n        disabled={disabled}\n        required={required}\n      >\n        <SelectTrigger\n          id={selectId}\n          aria-labelledby={`${selectId}-label`}\n          className={cn(\"w-full\", className)}\n        >\n          <SelectValue placeholder={placeholder} />\n        </SelectTrigger>\n        <SelectContent>\n          {options.map((option) => (\n            <SelectItem\n              key={option.value}\n              value={option.value}\n              disabled={option.disabled}\n            >\n              {option.label}\n            </SelectItem>\n          ))}\n        </SelectContent>\n      </Select>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/simple-select.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

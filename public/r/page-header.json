@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-header",
+  "title": "Page Header",
+  "description": "Simplified Tien UI component: page-header.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/page-header.tsx",
+      "content": "import type { ComponentProps, ReactNode } from \"react\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface PageHeaderProps extends Omit<\n  ComponentProps<\"header\">,\n  \"title\" | \"children\"\n> {\n  title: ReactNode\n  description?: ReactNode\n  actions?: ReactNode\n  eyebrow?: ReactNode\n}\n\nexport function PageHeader({\n  title,\n  description,\n  actions,\n  eyebrow,\n  className,\n  ...props\n}: PageHeaderProps) {\n  return (\n    <header\n      data-slot=\"page-header\"\n      className={cn(\n        \"flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between\",\n        className\n      )}\n      {...props}\n    >\n      <div className=\"min-w-0\">\n        {eyebrow != null && (\n          <p className=\"mb-2 text-xs font-medium tracking-widest text-muted-foreground uppercase\">\n            {eyebrow}\n          </p>\n        )}\n        <h1 className=\"text-2xl font-semibold tracking-tight sm:text-3xl\">\n          {title}\n        </h1>\n        {description != null && (\n          <p className=\"mt-2 max-w-2xl text-sm leading-6 text-muted-foreground\">\n            {description}\n          </p>\n        )}\n      </div>\n      {actions != null && (\n        <div className=\"flex shrink-0 flex-wrap items-center gap-2\">\n          {actions}\n        </div>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/page-header.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

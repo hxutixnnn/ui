@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simple-tooltip",
+  "title": "Simple Tooltip",
+  "description": "Simplified Tien UI component: simple-tooltip.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/simple-tooltip.tsx",
+      "content": "\"use client\"\n\nimport type { ComponentProps, ReactElement, ReactNode } from \"react\"\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\"\n\nexport interface SimpleTooltipProps {\n  content: ReactNode\n  children: ReactElement\n  side?: ComponentProps<typeof TooltipContent>[\"side\"]\n  delay?: number\n}\n\nexport function SimpleTooltip({\n  content,\n  children,\n  side = \"top\",\n  delay = 300,\n}: SimpleTooltipProps) {\n  return (\n    <TooltipProvider delay={delay}>\n      <Tooltip>\n        <TooltipTrigger render={children} />\n        <TooltipContent side={side}>{content}</TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/simple-tooltip.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

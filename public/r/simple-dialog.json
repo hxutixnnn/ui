@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simple-dialog",
+  "title": "Simple Dialog",
+  "description": "Simplified Tien UI component: simple-dialog.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/dialog.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/simple-dialog.tsx",
+      "content": "\"use client\"\n\nimport type { ComponentProps, ReactElement, ReactNode } from \"react\"\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\"\n\nexport interface SimpleDialogProps {\n  trigger: ReactElement\n  title: ReactNode\n  description?: ReactNode\n  children: ReactNode\n  footer?: ReactNode\n  open?: boolean\n  onOpenChange?: ComponentProps<typeof Dialog>[\"onOpenChange\"]\n  className?: string\n}\n\nexport function SimpleDialog({\n  trigger,\n  title,\n  description,\n  children,\n  footer,\n  open,\n  onOpenChange,\n  className,\n}: SimpleDialogProps) {\n  return (\n    <Dialog open={open} onOpenChange={onOpenChange}>\n      <DialogTrigger render={trigger} />\n      <DialogContent className={className}>\n        <DialogHeader className=\"pr-8\">\n          <DialogTitle>{title}</DialogTitle>\n          {description != null && (\n            <DialogDescription>{description}</DialogDescription>\n          )}\n        </DialogHeader>\n        <div className=\"grid gap-4\">{children}</div>\n        {footer != null && <DialogFooter>{footer}</DialogFooter>}\n      </DialogContent>\n    </Dialog>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/simple-dialog.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

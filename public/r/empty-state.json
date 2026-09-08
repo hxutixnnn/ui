@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "title": "Empty State",
+  "description": "Simplified Tien UI component: empty-state.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/empty-state.tsx",
+      "content": "import type { ComponentProps, ReactNode } from \"react\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface EmptyStateProps extends Omit<\n  ComponentProps<\"div\">,\n  \"title\" | \"children\"\n> {\n  title: ReactNode\n  description?: ReactNode\n  icon?: ReactNode\n  action?: ReactNode\n}\n\nexport function EmptyState({\n  title,\n  description,\n  icon,\n  action,\n  className,\n  ...props\n}: EmptyStateProps) {\n  return (\n    <div\n      data-slot=\"empty-state\"\n      className={cn(\n        \"flex flex-col items-center rounded-3xl border border-dashed px-6 py-12 text-center\",\n        className\n      )}\n      {...props}\n    >\n      {icon != null && (\n        <div\n          aria-hidden=\"true\"\n          className=\"mb-4 flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground [&_svg]:size-6\"\n        >\n          {icon}\n        </div>\n      )}\n      <h3 className=\"text-base font-semibold tracking-tight\">{title}</h3>\n      {description != null && (\n        <p className=\"mt-2 max-w-sm text-sm leading-6 text-muted-foreground\">\n          {description}\n        </p>\n      )}\n      {action != null && (\n        <div className=\"mt-5 flex flex-wrap justify-center gap-2\">{action}</div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/empty-state.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

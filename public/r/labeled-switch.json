@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "labeled-switch",
+  "title": "Labeled Switch",
+  "description": "Simplified Tien UI component: labeled-switch.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/switch.json",
+    "https://ui.nguyenhuutien.com/r/label.json",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/labeled-switch.tsx",
+      "content": "\"use client\"\n\nimport { useId, type ComponentProps, type ReactNode } from \"react\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface LabeledSwitchProps extends ComponentProps<typeof Switch> {\n  label: ReactNode\n  description?: ReactNode\n  containerClassName?: string\n}\n\nexport function LabeledSwitch({\n  label,\n  description,\n  id,\n  containerClassName,\n  ...props\n}: LabeledSwitchProps) {\n  const generatedId = useId()\n  const switchId = id ?? generatedId\n  const hasDescription = description != null && description !== false\n  const describedBy =\n    [props[\"aria-describedby\"], hasDescription && `${switchId}-description`]\n      .filter(Boolean)\n      .join(\" \") || undefined\n\n  return (\n    <div\n      data-slot=\"labeled-switch\"\n      className={cn(\n        \"flex items-center justify-between gap-6\",\n        containerClassName\n      )}\n    >\n      <div className=\"grid gap-1.5\">\n        <Label\n          htmlFor={switchId}\n          className={cn(\"leading-5\", props.disabled && \"opacity-50\")}\n        >\n          {label}\n        </Label>\n        {hasDescription && (\n          <p\n            id={`${switchId}-description`}\n            className=\"text-sm text-muted-foreground\"\n          >\n            {description}\n          </p>\n        )}\n      </div>\n      <Switch {...props} id={switchId} aria-describedby={describedBy} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/labeled-switch.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

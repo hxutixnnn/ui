@@ -1,15 +1,17 @@
 {
-  "name": "ui",
+  "name": "tien-ui",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run registry:build && tsc -b && vite build",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "typecheck": "tsc -b",
+    "preview": "vite preview",
+    "registry:build": "node scripts/build-registry.mjs",
+    "deploy": "npm run build && cf deploy"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -39,6 +41,7 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~6",
     "typescript-eslint": "^8",
-    "vite": "^8"
+    "vite": "^8",
+    "wrangler": "^4.129.1"
   }
 }

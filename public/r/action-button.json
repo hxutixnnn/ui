@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "action-button",
+  "title": "Action Button",
+  "description": "Simplified Tien UI component: action-button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.nguyenhuutien.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/tien/action-button.tsx",
+      "content": "\"use client\"\n\nimport type { ComponentProps, ReactNode } from \"react\"\nimport { Button } from \"@/components/ui/button\"\n\nexport interface ActionButtonProps extends ComponentProps<typeof Button> {\n  loading?: boolean\n  leadingIcon?: ReactNode\n  trailingIcon?: ReactNode\n}\n\nexport function ActionButton({\n  loading = false,\n  leadingIcon,\n  trailingIcon,\n  disabled,\n  children,\n  ...props\n}: ActionButtonProps) {\n  return (\n    <Button\n      {...props}\n      disabled={disabled || loading}\n      aria-busy={loading || props[\"aria-busy\"]}\n    >\n      {loading ? (\n        <span\n          aria-hidden=\"true\"\n          className=\"size-4 rounded-full border-2 border-current border-r-transparent motion-safe:animate-spin\"\n        />\n      ) : leadingIcon ? (\n        <span\n          aria-hidden=\"true\"\n          data-icon=\"inline-start\"\n          className=\"inline-flex\"\n        >\n          {leadingIcon}\n        </span>\n      ) : null}\n      {children}\n      {!loading && trailingIcon ? (\n        <span aria-hidden=\"true\" data-icon=\"inline-end\" className=\"inline-flex\">\n          {trailingIcon}\n        </span>\n      ) : null}\n    </Button>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "@components/tien/action-button.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
